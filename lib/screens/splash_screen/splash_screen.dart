@@ -1,7 +1,14 @@
+import 'dart:async';
+
 import 'package:drug_store/constants/constants.dart';
+import 'package:drug_store/screens/otp_screens/otp_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:lottie/lottie.dart';
+
+import '../onboarding/on_boarding_page.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -9,17 +16,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplasScreenState extends State<SplashScreen> {
-/*  var seen = GetStorage().read("seen");
-  var auth = GetStorage().read("auth");*/
+  var seen = GetStorage().read("seen");
   @override
-/*
   void initState() {
     // TODO: implement initState
     super.initState();
 
-    Timer(Duration(seconds: 4), () => Get.to(seen == 1 ? (auth == 1 ? HomePageContent() : Login()) : OnBoardingPage()));
+    Timer(Duration(seconds: 4), () => Get.to(seen == 1 ? OTPScreen() : OnBoardingPage()));
   }
-*/
 
   @override
   Widget build(BuildContext context) {

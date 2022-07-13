@@ -1,4 +1,3 @@
-import 'package:drug_store/data/medicins.dart';
 import 'package:drug_store/screens/home_screens/items/basket/payment_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,12 +14,7 @@ class BasketScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<BasketScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-  List<Medicins> medicins = [
-    Medicins(name: "The ordinary", image: "assets/images/ordinary.jpg", price: 9, priceReduction: 19),
-    Medicins(name: "Tylenol 100mg", image: "assets/images/tylenol.jpg", price: 16),
-    Medicins(name: "Blackmores", image: "assets/images/blackmores.jpg", price: 19),
-    Medicins(name: "multibiane", image: "assets/images/multibiane.jpg", price: 12),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -59,7 +53,7 @@ class _HomeScreenState extends State<BasketScreen> {
           alignment: Alignment.bottomCenter,
           children: [
             ListView.builder(
-                itemCount: medicins.length,
+                itemCount: Constants.medicins.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -70,14 +64,14 @@ class _HomeScreenState extends State<BasketScreen> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Image.asset(medicins[index].image),
+                            child: Image.asset(Constants.medicins[index].image),
                           ),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  medicins[index].name,
+                                  Constants.medicins[index].name,
                                   style: TextStyle(color: Constants.otpTextColor, fontFamily: "NunitoBold"),
                                 ),
                                 Container(
@@ -86,7 +80,7 @@ class _HomeScreenState extends State<BasketScreen> {
                                       Column(
                                         children: [
                                           Text(
-                                            "${medicins[index].price}",
+                                            "${Constants.medicins[index].price}",
                                             style: TextStyle(color: Colors.red),
                                           ),
                                           const Text(
@@ -95,13 +89,13 @@ class _HomeScreenState extends State<BasketScreen> {
                                           ),
                                         ],
                                       ),
-                                      if (medicins[index].priceReduction != null) ...[
+                                      if (Constants.medicins[index].priceReduction != null) ...[
                                         Padding(
                                           padding: EdgeInsets.symmetric(horizontal: Constants.screenWidth * 0.1),
                                           child: Column(
                                             children: [
                                               Text(
-                                                "${medicins[index].priceReduction}",
+                                                "${Constants.medicins[index].priceReduction}",
                                                 style: TextStyle(
                                                     color: Constants.otpTextColor, decoration: TextDecoration.lineThrough),
                                               ),
@@ -119,7 +113,7 @@ class _HomeScreenState extends State<BasketScreen> {
                                           style: ElevatedButton.styleFrom(primary: Colors.red),
                                           onPressed: () {
                                             setState(() {
-                                              medicins.removeAt(index);
+                                              Constants.medicins.removeAt(index);
                                             });
                                           },
                                           icon: Icon(Icons.delete),
@@ -162,7 +156,7 @@ class _HomeScreenState extends State<BasketScreen> {
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             vertical: Constants.screenHeight * 0.02, horizontal: Constants.screenWidth * 0.05),
-                        child: Text("valider", style: TextStyle(fontFamily: "NunitoBold")),
+                        child: Text("Valider", style: TextStyle(fontFamily: "NunitoBold")),
                       )),
                 ],
               ),

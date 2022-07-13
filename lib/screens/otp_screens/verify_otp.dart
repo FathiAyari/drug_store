@@ -1,5 +1,7 @@
+import 'package:drug_store/screens/home_screens/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants/constants.dart';
 
@@ -62,7 +64,9 @@ class _OTPScreenState extends State<VerifyOTP> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), primary: Constants.btnColor),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(Home());
+                    },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 18.0),
                       child: Text("Vérifier"),

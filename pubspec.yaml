@@ -53,6 +53,7 @@ dev_dependencies:
   google_maps_flutter: ^2.1.3
   geolocator: ^8.2.0 # gestion de la localisation
   geocoding: ^2.0.4 # conversion de latitude et longitude en adresses
+  url_launcher: ^6.1.0 # gestion des appels de téléphone
 
 flutter_icons:
   android: "launcher_icon"

@@ -22,15 +22,10 @@ class _PaymentState extends State<Payment> {
         margin: EdgeInsets.all(20),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Constants.btnColor),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => EditCreditCard()),
-              );
-            },
+            onPressed: () {},
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: Constants.screenHeight * 0.02, horizontal: Constants.screenWidth * 0.05),
-              child: Text("valider", style: TextStyle(fontFamily: "NunitoBold")),
+              child: Text("Valider", style: TextStyle(fontFamily: "NunitoBold")),
             )),
       ),
       backgroundColor: Constants.bgColor,
