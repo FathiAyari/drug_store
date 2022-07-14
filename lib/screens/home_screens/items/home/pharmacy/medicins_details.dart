@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../../../constants/constants.dart';
 
@@ -94,7 +95,16 @@ class _MedicinsDetailsState extends State<MedicinsDetails> {
                                   decoration: BoxDecoration(color: Constants.bgColor, borderRadius: BorderRadius.circular(15)),
                                   child: IconButton(
                                     color: Constants.btnColor,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Fluttertoast.showToast(
+                                          msg: "Element ajouté avec succès",
+                                          toastLength: Toast.LENGTH_SHORT,
+                                          gravity: ToastGravity.BOTTOM,
+                                          timeInSecForIosWeb: 1,
+                                          backgroundColor: Colors.grey,
+                                          textColor: Colors.white,
+                                          fontSize: 16.0);
+                                    },
                                     icon: Icon(Icons.shopping_cart_sharp),
                                   ),
                                 )

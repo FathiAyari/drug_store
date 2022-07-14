@@ -17,4 +17,7 @@ class Constants {
     Medicins(name: "Blackmores", image: "assets/images/blackmores.jpg", price: 19),
     Medicins(name: "multibiane", image: "assets/images/multibiane.jpg", price: 12),
   ];
+  static List<Medicins> medicins2 = [
+    Medicins(name: "FILORGA TROUSSE LES BEST SELLERS", image: "assets/images/15.png", price: 20, priceReduction: 18),
+  ];
 }

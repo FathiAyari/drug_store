@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../../constants/constants.dart';
 import 'edit_credit_card.dart';
@@ -22,7 +23,16 @@ class _PaymentState extends State<Payment> {
         margin: EdgeInsets.all(20),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Constants.btnColor),
-            onPressed: () {},
+            onPressed: () {
+              Fluttertoast.showToast(
+                  msg: "Votre comamnde est en cours",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.grey,
+                  textColor: Colors.white,
+                  fontSize: 16.0);
+            },
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: Constants.screenHeight * 0.02, horizontal: Constants.screenWidth * 0.05),
               child: Text("Valider", style: TextStyle(fontFamily: "NunitoBold")),
