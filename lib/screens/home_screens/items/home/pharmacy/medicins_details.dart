@@ -54,7 +54,8 @@ class _MedicinsDetailsState extends State<MedicinsDetails> {
                         children: [
                           Text(
                             Constants.medicins[index].name,
-                            style: TextStyle(color: Constants.otpTextColor, fontFamily: "NunitoBold"),
+                            style: TextStyle(
+                                overflow: TextOverflow.ellipsis, color: Constants.otpTextColor, fontFamily: "NunitoBold"),
                           ),
                           Container(
                             child: Row(
